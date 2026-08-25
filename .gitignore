@@ -1,0 +1,29 @@
+# Ambientes e artefactos de Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.pyd
+
+# Saídas de compilação
+build/
+dist/
+*.spec.bak
+
+# Dados locais, credenciais e sessões de browser
+config.json
+settings.json
+dados.db
+dados_teste.db
+vistos.json
+vistos_teste.json
+facebook_storage_state.json
+imagens_regras/
+.streamlit/
+
+# Registos, capturas e ficheiros temporários
+*.log
+*.dump
+*_dump.html
+wallapop_next_data.json
+export_teste.csv

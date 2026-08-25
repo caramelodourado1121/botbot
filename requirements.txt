@@ -1,0 +1,54 @@
+# ============================================================
+# requirements.txt
+# Monitor de Oportunidades — Vinted, Wallapop, OLX & Facebook Marketplace
+# ============================================================
+#
+# Instalar com:  pip install -r requirements.txt
+#
+# Nota: as versões abaixo são as recomendadas/testadas para este
+# projeto. Se preferires as versões mais recentes disponíveis,
+# corre "pip install --upgrade -r requirements.txt" depois.
+
+# --- Interface e servidor web -------------------------------
+streamlit>=1.38,<2.0
+
+# Auto-atualização opcional da UI (Tab "Oportunidades" e "Logs")
+# A app funciona sem este pacote, apenas perde a atualização automática.
+streamlit-autorefresh>=1.0.1
+
+# --- Pedidos HTTP (scraper_engine.py e notifier.py) ---------
+requests>=2.31,<3.0
+
+# --- Browser real para contornar bloqueios anti-bot da Wallapop --------
+# Usado apenas como último recurso em scraper_engine.py, quando o pedido
+# direto à API da Wallapop é bloqueado (403). Precisa de um download
+# adicional (o Chromium, ~150 MB) feito automaticamente na primeira vez
+# que for necessário — corre "playwright install chromium" manualmente
+# se preferires fazer esse download já, em vez de esperar pela primeira
+# deteção de bloqueio.
+playwright>=1.45,<2.0
+playwright-stealth>=1.0.6
+
+# --- Pesquisa por imagem nas regras (já vem com o Streamlit; listado à parte)
+Pillow>=10.0
+
+# --- Empacotamento em .exe (apenas necessário na máquina que compila,
+#     NÃO é necessário para o utilizador final que só corre o .exe) -----
+pyinstaller>=6.3
+
+# --- Similaridade Visual com CLIP ---------------------------------------
+# PyTorch para processamento de deep learning (base do CLIP)
+torch>=2.0.0,<3.0
+torchvision>=0.15.0,<1.0
+
+# openai-clip 1.0.1
+git+https://github.com/openai/CLIP.git
+# Compatibilidade: openai-clip ainda importa pkg_resources (setuptools antigo).
+packaging>=23.0
+
+# Dependências do CLIP
+ftfy>=6.1.0
+regex>=2022.0.0
+
+# Processamento assíncrono para downloads paralelos de imagens
+aiohttp>=3.8.0,<4.0

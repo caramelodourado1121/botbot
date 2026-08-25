@@ -1,0 +1,11 @@
+{
+  "regras": [],
+  "clip_config": {
+    "model_name": "ViT-B/16",
+    "device": "auto",
+    "cache_size": 1000,
+    "max_concurrent_downloads": 10,
+    "timeout_seconds": 10,
+    "max_retries": 3
+  }
+}
